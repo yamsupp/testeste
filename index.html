@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aceita namorar comigo?</title>
+  <style>
+    
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      font-family: 'Arial', Helvetica, sans-serif;
+      background-image: url(https://i.pinimg.com/736x/8b/3a/25/8b3a2540d36a855a9074662a7672a935.jpg);
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      color: black;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      max-width: 100%;
+      background-color: rgba(211, 179, 179, 0.85);
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    .paragraph {
+      font-weight: bold;
+      font-size: 1.2rem;
+      line-height: 1.6;
+      width: 100%;
+      max-width: 600px;
+      margin-bottom: 20px;
+      padding: 0 20px;
+    }
+
+    .div-video {
+      background-color: rgba(255, 255, 255, 0.6);
+      padding: 10px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+
+    .video-wrapper {
+      position: relative;
+      width: 100%;
+      max-width: 560px;
+      padding-bottom: 56.25%;
+      height: 0;
+    }
+
+    .video-wrapper iframe {
+      position: relative;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .botoes {
+      margin-top: 20px;
+    }
+
+    .botoes button {
+      margin: 10px;
+      padding: 10px 20px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 8px;
+      background-color: #ff7e91;
+      color: white;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .botoes button:hover {
+      background-color: #ff5e73;
+    }
+
+    .imagem-exibida {
+      margin-top: 20px;
+      max-width: 300px;
+      display: none;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Oi amor</h1>
+    <div class="paragraph">
+      <p>Eu nem tenho muito o que escrever, porque o meu enfoque mesmo, hoje, vai ser falar.</p>
+      <p>Sempre me "declarei" pra você por palavras escritas... Isso é lindo, mas não é o que eu busco</p>
+      <p>Então hoje é o dia em que eu te conto tudo que ta no meu coraçãozinho, tudo mesmo... Desde como eu quero você na minha vida, quanto no futuro e afins</p>
+      <p>Desde que me entreguei de vez pra essa doutrina, meu maior sonho foi e é ter alguem pra servir a Deus comigo, irmos buscar a palavra, orarmos juntos, termos uma perfeita comunhão, eu você e Deus</p>
+      <p>Falei que não ia escrever muito, maior parte vai ser na lábia mesmo kkk, do coração, então se algo sair estranho, se eu travar ou falar alguma palavra errada me perdoa. Como pessoa eu sou falho, como servo eu sou falho, eu tenho muitos erros, então tenha piedade kkkk</p>
+    </div>
+
+    <div class="div-video">
+      <div class="video-wrapper">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/bXar4iXR5W0?si=dXQmhV46xiGeqBdq&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>      </div>
+    </div>
+
+    <div class="botoes">
+      <button onclick="toggleImagem('img1')">❤️ </button>
+      <button onclick="toggleImagem('img2')">❤️</button>
+      <button onclick="toggleImagem('img3')">❤️</button>
+    </div>
+
+    <img id="img1" class="imagem-exibida" src="./img/pedido1.jpg" alt="Imagem 1">
+    <img id="img2" class="imagem-exibida" src="./img/saindo.jpg" alt="Imagem 2">
+    <img id="img3" class="imagem-exibida" src="./img/beijin.jpg" alt="Imagem 3">
+  </div>
+
+  <script>
+    
+    let imagemAtual = null;
+
+    function toggleImagem(id) {
+      const imagem = document.getElementById(id);
+      
+   
+      if (imagemAtual === imagem) {
+        imagem.style.display = 'none';
+        imagemAtual = null;
+        return;
+      }
+      
+      
+      const imagens = document.querySelectorAll('.imagem-exibida');
+      imagens.forEach(img => img.style.display = 'none');
+      
+      
+      imagem.style.display = 'block';
+      imagemAtual = imagem;
+      
+      
+      imagem.scrollIntoView({ behavior: 'smooth' });
+    }
+  </script>
+</body>
+</html>
